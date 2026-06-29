@@ -162,6 +162,98 @@
       background: linear-gradient(90deg, transparent, var(--border), transparent);
     }
 
+    /* ── PRICING ── */
+    #pricing { background: var(--bg2); }
+    .section-eyebrow {
+      display: block;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+    .pricing-header { text-align: center; margin-bottom: 56px; }
+    .pricing-header .section-sub { margin: 0 auto; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      position: relative;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .pricing-card.featured {
+      border-color: var(--teal);
+      background: linear-gradient(160deg, rgba(79,255,212,.06) 0%, var(--surface) 60%);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--teal);
+      color: var(--bg);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pricing-tier {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .pricing-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .pricing-price sup { font-size: 1.2rem; vertical-align: top; margin-top: 8px; display: inline-block; }
+    .pricing-desc { font-size: .88rem; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text); line-height: 1.5; }
+    .pricing-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .pricing-cta { width: 100%; text-align: center; justify-content: center; }
+    .btn-teal { background: var(--teal); color: var(--bg); }
+    .btn-surface { background: rgba(255,255,255,.06); color: var(--white); border: 1px solid var(--border); }
+    .btn-surface:hover { background: rgba(255,255,255,.1); }
+
+    @media (max-width: 860px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .section { padding: 72px 0; }
@@ -196,6 +288,61 @@
       </div>
     </div>
     <div class="hero-rule"></div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="pricing-header reveal">
+        <span class="section-eyebrow">Pricing</span>
+        <h2 class="section-title">Simple, transparent pricing</h2>
+        <p class="section-sub">No surprise invoices. You know the price before we start.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal reveal-delay-1">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price"><sup>$</sup>799</div>
+          <p class="pricing-desc">Perfect for getting online fast with a clean, professional presence.</p>
+          <ul class="pricing-features">
+            <li>Single-page site (up to 5 sections)</li>
+            <li>Mobile-responsive design</li>
+            <li>Free GitHub Pages hosting</li>
+            <li>1 round of revisions</li>
+            <li>Delivered in ~1 week</li>
+          </ul>
+          <a href="#contact" class="btn btn-surface pricing-cta">Get Started</a>
+        </div>
+        <div class="pricing-card featured reveal reveal-delay-2">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price"><sup>$</sup>1,499</div>
+          <p class="pricing-desc">A full site that builds trust and drives action — most clients choose this.</p>
+          <ul class="pricing-features">
+            <li>Multi-page site (up to 8 pages)</li>
+            <li>Contact form integration</li>
+            <li>SEO basics (meta tags, sitemap)</li>
+            <li>Google Analytics setup</li>
+            <li>3 rounds of revisions</li>
+            <li>Delivered in ~2 weeks</li>
+          </ul>
+          <a href="#contact" class="btn btn-teal pricing-cta">Get Started</a>
+        </div>
+        <div class="pricing-card reveal reveal-delay-3">
+          <div class="pricing-tier">Premium</div>
+          <div class="pricing-price"><sup>$</sup>2,499</div>
+          <p class="pricing-desc">Full-service — we handle the copy, the design, and the launch.</p>
+          <ul class="pricing-features">
+            <li>Everything in Pro</li>
+            <li>Professional copywriting</li>
+            <li>Logo polish / brand touchup</li>
+            <li>Custom domain setup</li>
+            <li>Priority support for 30 days</li>
+            <li>Delivered in ~2 weeks</li>
+          </ul>
+          <a href="#contact" class="btn btn-surface pricing-cta">Get Started</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- sections go here -->
