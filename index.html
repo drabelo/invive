@@ -94,6 +94,8 @@
     }
     .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
     .btn-primary { background: var(--teal); color: var(--bg); }
+    .btn-outline  { background: transparent; color: var(--teal); border: 1.5px solid rgba(79,255,212,.45); }
+    .btn-outline:hover { border-color: var(--teal); background: rgba(79,255,212,.06); }
     .btn-ghost   { background: transparent; color: var(--white); border: 1.5px solid var(--border); }
     .btn-ghost:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.04); }
 
@@ -468,9 +470,9 @@
         <li><a href="#work">Work</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="btn btn-primary">Get in Touch</a></li>
+        <li><a href="#contact" class="btn btn-outline">Get in Touch</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary nav-cta-mobile">Get in Touch</a>
+      <a href="#contact" class="btn btn-outline nav-cta-mobile">Get in Touch</a>
     </div>
   </nav>
 
