@@ -299,6 +299,55 @@
       .hiw-step { border-bottom: 1px solid var(--border); }
       .hiw-step:last-child { border-bottom: none; }
     }
+
+    /* ── WORK ── */
+    #work { background: var(--bg2); }
+    .work-header { margin-bottom: 48px; }
+    .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+    .work-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .work-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .work-preview {
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 60%, #40916C 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .work-preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,.3));
+    }
+    .work-info { padding: 24px; }
+    .work-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .work-tag {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: var(--teal-dim);
+      color: var(--teal);
+    }
+    .work-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .work-desc { font-size: .88rem; color: var(--muted); line-height: 1.6; }
   </style>
 </head>
 <body>
@@ -407,6 +456,29 @@
           <div class="hiw-number">03</div>
           <div class="hiw-step-title">You Launch</div>
           <p class="hiw-step-desc">One final round of changes, then your site goes live. Fast, clean, and ready for customers to find you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="section">
+    <div class="container">
+      <div class="work-header reveal">
+        <span class="section-eyebrow">Selected Work</span>
+        <h2 class="section-title">What we've built</h2>
+      </div>
+      <div class="work-grid">
+        <div class="work-card reveal reveal-delay-1">
+          <div class="work-preview">🥤</div>
+          <div class="work-info">
+            <div class="work-tags">
+              <span class="work-tag">Brochure Site</span>
+              <span class="work-tag">Local Business</span>
+            </div>
+            <div class="work-title">Maha Juice Marlborough</div>
+            <p class="work-desc">Full brochure site for a new cold-press juice bar in Marlborough, MA. Menu, location, testimonials, and online presence from zero to live.</p>
+          </div>
         </div>
       </div>
     </div>
