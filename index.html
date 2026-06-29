@@ -204,7 +204,7 @@
       position: relative;
       transition: transform .25s, box-shadow .25s;
     }
-    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(79,255,212,.35); }
     .pricing-card.featured {
       border-color: var(--teal);
       background: linear-gradient(160deg, rgba(79,255,212,.06) 0%, var(--surface) 60%);
@@ -246,7 +246,6 @@
     .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text); line-height: 1.5; }
     .pricing-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
     .pricing-cta { width: 100%; text-align: center; justify-content: center; }
-    .btn-teal { background: var(--teal); color: var(--bg); }
     .btn-surface { background: rgba(255,255,255,.06); color: var(--white); border: 1px solid var(--border); }
     .btn-surface:hover { background: rgba(255,255,255,.1); }
 
@@ -442,6 +441,9 @@
     .footer-logo span { color: var(--teal); }
     .footer-tagline { font-size: .82rem; color: var(--muted); }
     .footer-copy { font-size: .8rem; color: var(--muted); }
+
+    .nav-cta-mobile { display: none; font-size: .85rem; padding: 10px 20px; }
+    @media (max-width: 768px) { .nav-cta-mobile { display: inline-flex; } }
   </style>
 </head>
 <body>
@@ -455,6 +457,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact" class="btn btn-primary">Get in Touch</a></li>
       </ul>
+      <a href="#contact" class="btn btn-primary nav-cta-mobile">Get in Touch</a>
     </div>
   </nav>
 
@@ -508,7 +511,7 @@
             <li>3 rounds of revisions</li>
             <li>Delivered in ~2 weeks</li>
           </ul>
-          <a href="#contact" class="btn btn-teal pricing-cta">Get Started</a>
+          <a href="#contact" class="btn btn-primary pricing-cta">Get Started</a>
         </div>
         <div class="pricing-card reveal reveal-delay-3">
           <div class="pricing-tier">Premium</div>
