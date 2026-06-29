@@ -417,6 +417,31 @@
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-visual { max-width: 100%; }
     }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -.02em;
+    }
+    .footer-logo span { color: var(--teal); }
+    .footer-tagline { font-size: .82rem; color: var(--muted); }
+    .footer-copy { font-size: .8rem; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -586,6 +611,17 @@
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <a href="#hero" class="footer-logo">inv<span>i</span>ve</a>
+        <p class="footer-tagline">Fast sites for real businesses.</p>
+      </div>
+      <p class="footer-copy">© 2026 Invive. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
     // Nav scroll
