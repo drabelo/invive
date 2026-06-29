@@ -348,6 +348,75 @@
       margin-bottom: 6px;
     }
     .work-desc { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      aspect-ratio: 1;
+      max-width: 420px;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 60% 40%, rgba(79,255,212,.08), transparent 70%);
+    }
+    .about-text .section-title { margin-bottom: 20px; }
+    .about-body { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
+    .about-stat-row { display: flex; gap: 40px; margin-bottom: 36px; }
+    .about-stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--teal);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .about-stat-label { font-size: .8rem; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--bg2);
+      text-align: center;
+    }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-inner .section-title { margin-bottom: 16px; }
+    .contact-inner .section-sub { margin: 0 auto 40px; }
+    .contact-email {
+      display: inline-block;
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 2px solid rgba(79,255,212,.3);
+      padding-bottom: 2px;
+      transition: border-color .2s, color .2s;
+      margin-bottom: 32px;
+    }
+    .contact-email:hover { border-color: var(--teal); }
+    .contact-note { font-size: .88rem; color: var(--muted); margin-top: 20px; }
+
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -484,7 +553,39 @@
     </div>
   </section>
 
-  <!-- sections go here -->
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-visual reveal">⚡</div>
+      <div class="about-text reveal reveal-delay-1">
+        <span class="section-eyebrow">About</span>
+        <h2 class="section-title">Built by a software engineer, not a template</h2>
+        <p class="about-body">Invive is run by Dailton Rabelo, a software engineer based in Massachusetts. I build fast, clean websites for real businesses — no page builders, no bloat, just custom code that looks sharp and loads fast.<br><br>Every site I build is handcrafted to your business. You get direct access to the person building it, from first conversation to launch day.</p>
+        <div class="about-stat-row">
+          <div><span class="about-stat-num">2wk</span><span class="about-stat-label">Avg. turnaround</span></div>
+          <div><span class="about-stat-num">100%</span><span class="about-stat-label">Custom code</span></div>
+          <div><span class="about-stat-num">$0</span><span class="about-stat-label">Hidden fees</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Start a project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-inner reveal">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title">Let's build something</h2>
+        <p class="section-sub">Tell me about your business and what you need. I'll get back to you within 24 hours.</p>
+        <div>
+          <a href="mailto:dailtonrabelo@gmail.com" class="contact-email">dailtonrabelo@gmail.com</a>
+        </div>
+        <a href="mailto:dailtonrabelo@gmail.com" class="btn btn-primary">Send an Email</a>
+        <p class="contact-note">Most sites are live within 2 weeks of our first conversation.</p>
+      </div>
+    </div>
+  </section>
 
   <script>
     // Nav scroll
