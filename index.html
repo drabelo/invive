@@ -259,6 +259,46 @@
       .section { padding: 72px 0; }
       .nav-links { display: none; }
     }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works { background: var(--bg); }
+    .hiw-header { text-align: center; margin-bottom: 64px; }
+    .hiw-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .hiw-step {
+      background: var(--bg);
+      padding: 40px 32px;
+      position: relative;
+    }
+    .hiw-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--teal-dim);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -.04em;
+    }
+    .hiw-step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .hiw-step-desc { font-size: .9rem; color: var(--muted); line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .hiw-grid { grid-template-columns: 1fr; background: none; gap: 0; }
+      .hiw-step { border-bottom: 1px solid var(--border); }
+      .hiw-step:last-child { border-bottom: none; }
+    }
   </style>
 </head>
 <body>
@@ -340,6 +380,33 @@
             <li>Delivered in ~2 weeks</li>
           </ul>
           <a href="#contact" class="btn btn-surface pricing-cta">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <div class="hiw-header reveal">
+        <span class="section-eyebrow">Process</span>
+        <h2 class="section-title">From idea to live site in 2 weeks</h2>
+      </div>
+      <div class="hiw-grid">
+        <div class="hiw-step reveal reveal-delay-1">
+          <div class="hiw-number">01</div>
+          <div class="hiw-step-title">Chat</div>
+          <p class="hiw-step-desc">We talk through your business, your goals, and what you need. 30 minutes — no sales pitch, just questions.</p>
+        </div>
+        <div class="hiw-step reveal reveal-delay-2">
+          <div class="hiw-number">02</div>
+          <div class="hiw-step-title">We Build</div>
+          <p class="hiw-step-desc">I design and build your site. You get a preview link within 7 days so you can see it before it goes live.</p>
+        </div>
+        <div class="hiw-step reveal reveal-delay-3">
+          <div class="hiw-number">03</div>
+          <div class="hiw-step-title">You Launch</div>
+          <p class="hiw-step-desc">One final round of changes, then your site goes live. Fast, clean, and ready for customers to find you.</p>
         </div>
       </div>
     </div>
