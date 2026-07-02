@@ -24,8 +24,14 @@
       --accent: #2456E6;
     }
 
+    /* Static gradient baked into the real document background (not a fixed
+       overlay) so iOS Safari extends it under the floating toolbar/dock
+       instead of clipping it at the visual viewport edge. */
     html {
-      background: var(--bg);
+      background:
+        radial-gradient(circle 60vmax at 0% 0%, rgba(36,86,230,.30), rgba(36,86,230,0) 70%),
+        radial-gradient(circle 60vmax at 100% 100%, rgba(255,138,76,.28), rgba(255,138,76,0) 70%),
+        var(--bg);
       height: 100%;
     }
 
