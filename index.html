@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Dailton Rabelo — Senior Software Engineer</title>
   <meta name="description" content="Dailton Rabelo is a senior software engineer at Garner Health in New York." />
   <meta property="og:title" content="Dailton Rabelo — Senior Software Engineer" />
@@ -24,14 +24,18 @@
       --accent: #2456E6;
     }
 
+    html {
+      background: var(--bg);
+      height: 100%;
+    }
+
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: var(--bg);
       color: var(--text);
-      min-height: 100svh;
+      min-height: 100dvh;
       display: grid;
       place-items: center;
-      padding: 24px;
+      padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
       -webkit-font-smoothing: antialiased;
       overflow: hidden;
     }
