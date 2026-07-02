@@ -25,21 +25,28 @@
     }
 
     /* Static gradient baked into the real document background (not a fixed
-       overlay) so iOS Safari extends it under the floating toolbar/dock
-       instead of clipping it at the visual viewport edge. */
+       overlay). The html box must span the LARGE viewport (100lvh = full
+       screen with Safari's toolbar collapsed): background images only paint
+       inside their box, and only the background color extends beyond it.
+       No overflow:hidden here — that suppresses WebKit's safe-area
+       background extension behind the status bar. The (lvh − svh) sliver of
+       scrollability is intentional: it's what lets the gradient render
+       under the translucent floating toolbar, same as any scrolling site. */
     html {
       background:
         radial-gradient(circle 60vmax at 0% 0%, rgba(36,86,230,.30), rgba(36,86,230,0) 70%),
         radial-gradient(circle 60vmax at 100% 100%, rgba(255,138,76,.28), rgba(255,138,76,0) 70%),
         var(--bg);
+      background-repeat: no-repeat;
       height: 100vh;
-      overflow: hidden;
+      height: 100lvh;
     }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--text);
       height: 100vh;
+      height: 100svh;
       display: grid;
       place-items: center;
       padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
@@ -82,7 +89,7 @@
 
     .grain {
       position: fixed;
-      inset: 0;
+      inset: -20vmax;
       z-index: -1;
       pointer-events: none;
       opacity: .5;
