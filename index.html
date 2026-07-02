@@ -103,9 +103,11 @@
 
     .subtitle {
       margin-top: 12px;
-      font-size: clamp(1rem, 2.5vw, 1.125rem);
+      font-size: clamp(.8125rem, 4.2vw, 1.125rem);
       color: var(--muted);
     }
+
+    .subtitle .nowrap { white-space: nowrap; }
 
     nav {
       margin-top: 36px;
@@ -138,7 +140,7 @@
   <div class="grain" aria-hidden="true"></div>
   <main>
     <h1 aria-label="Dailton Rabelo"><span aria-hidden="true" style="--i:0">D</span><span aria-hidden="true" style="--i:1">a</span><span aria-hidden="true" style="--i:2">i</span><span aria-hidden="true" style="--i:3">l</span><span aria-hidden="true" style="--i:4">t</span><span aria-hidden="true" style="--i:5">o</span><span aria-hidden="true" style="--i:6">n</span><span aria-hidden="true" style="--i:7">&nbsp;</span><span aria-hidden="true" style="--i:8">R</span><span aria-hidden="true" style="--i:9">a</span><span aria-hidden="true" style="--i:10">b</span><span aria-hidden="true" style="--i:11">e</span><span aria-hidden="true" style="--i:12">l</span><span aria-hidden="true" style="--i:13">o</span></h1>
-    <p class="subtitle">Senior Software Engineer at Garner Health&nbsp;&middot;&nbsp;New York</p>
+    <p class="subtitle"><span class="nowrap">Senior Software Engineer at Garner Health</span> <span class="nowrap">&middot;&nbsp;New York</span></p>
     <nav aria-label="Contact links">
       <a href="mailto:contact@dailton.com">Email</a>
       <a href="https://github.com/drabelo">GitHub</a>
