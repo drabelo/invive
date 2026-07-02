@@ -96,6 +96,45 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
+    /* iOS 26 Safari ignores the theme-color meta tag and instead tints its
+       glass status bar / floating toolbar from the background-COLOR of
+       position:fixed elements touching the viewport edges (roughly: within
+       4px of the top / 3px of the bottom, spanning most of the width) —
+       falling back to body's background-color. Background IMAGES are
+       ignored by that sampling, which is why the gradient alone never
+       tinted the bars. Each strip hands Safari a flat sampling color that
+       matches the gradient at that edge, while its own opaque gradient
+       keeps it visually indistinguishable from the page background.
+       Colors are sampled from a real device screenshot. */
+    .edge-tint {
+      display: none;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      height: 16px;
+      z-index: -3;
+      pointer-events: none;
+    }
+
+    /* iOS/iPadOS only — elsewhere there's no glass chrome to tint and the
+       strips would show as faint bands at the screen edges. display:none
+       is also the only reliable way to opt an element out of sampling. */
+    @supports (-webkit-touch-callout: none) {
+      .edge-tint { display: block; }
+    }
+
+    .edge-tint--top {
+      top: 0;
+      background-color: #B6C2EB;
+      background-image: linear-gradient(to right, #A2B2E9, #DFE4F2);
+    }
+
+    .edge-tint--bottom {
+      bottom: 0;
+      background-color: #F2D8C7;
+      background-image: linear-gradient(to right, #F6EEE7, #F1CDB5);
+    }
+
     main { text-align: center; }
 
     h1 {
@@ -156,6 +195,8 @@
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
+  <div class="edge-tint edge-tint--top" aria-hidden="true"></div>
+  <div class="edge-tint edge-tint--bottom" aria-hidden="true"></div>
   <main>
     <h1 aria-label="Dailton Rabelo"><span aria-hidden="true" style="--i:0">D</span><span aria-hidden="true" style="--i:1">a</span><span aria-hidden="true" style="--i:2">i</span><span aria-hidden="true" style="--i:3">l</span><span aria-hidden="true" style="--i:4">t</span><span aria-hidden="true" style="--i:5">o</span><span aria-hidden="true" style="--i:6">n</span><span aria-hidden="true" style="--i:7">&nbsp;</span><span aria-hidden="true" style="--i:8">R</span><span aria-hidden="true" style="--i:9">a</span><span aria-hidden="true" style="--i:10">b</span><span aria-hidden="true" style="--i:11">e</span><span aria-hidden="true" style="--i:12">l</span><span aria-hidden="true" style="--i:13">o</span></h1>
     <p class="subtitle"><span class="nowrap">Senior Software Engineer at Garner Health</span> <span class="nowrap">&middot;&nbsp;New York</span></p>
